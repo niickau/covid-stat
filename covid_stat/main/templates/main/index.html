@@ -1,0 +1,120 @@
+{% load static %}
+
+<html lang="en-us" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>CovidStat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <style>
+      html {
+        line-height: 1.15;
+      }
+      a {
+        color: #19865C;
+      }
+      header {
+        border-bottom: 1px solid #efefef;
+      }
+      body {
+        max-width: 960px;
+        color: #525252;
+        font-family: Roboto, sans-serif;
+        margin: 0 auto;
+      }
+      .name {
+        color: #525252;
+        font-family: Roboto, sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .card {
+        display: flex;
+        margin-top: 100px;
+        margin-bottom: 50px;
+      }
+      .card-block {
+        width: 5000px;
+        height: 50px;
+      }
+      .cv-stats-virus-item-value-good {
+          color: green;
+          margin-top: 25px;
+          margin-bottom: 25px;
+          font-style: bold;
+          font-size: 40px;
+          font-weight: 700;
+
+      }
+      .cv-stats-virus-item-value-bad {
+          color: red;
+          margin-top: 25px;
+          margin-bottom: 25px;
+          font-style: bold;
+          font-size: 40px;
+          font-weight: 700;
+      }
+      .cv-stats-virus-item-label {
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+      .stat_info {
+        font-size: 15px;
+        margin-top: 600px;
+      }
+      main {
+        text-align: center;
+      }
+      h1, h2, h3, h4, h5, p, ul {
+        padding: 0;
+        margin: 0;
+        font-weight: 400;
+      }
+      header {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: self-end;
+        justify-content: space-between;
+        gap: 7px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 1.375rem;
+        text-decoration: none;
+      }
+      .figure {
+        margin-top: 19vh;
+        max-width: 265px;
+        position: relative;
+        z-index: -9;
+        overflow: visible;
+      }
+    </style>
+<style type="text/css"></style></head>
+<body>
+  <header>
+      <p class="name">CovidStat</p>
+  </header>
+  <main>
+    <section class="card">
+        <div class="card-block">
+          <h3 class="cv-stats-virus-item-value-bad"">{{ sick }}</h3>
+          <div class="cv-stats-virus-item-label">Заболевших<br>&nbsp;всего</div>
+        </div>
+        <div class="card-block">
+          <h3 class="cv-stats-virus-item-value-bad">{{ sick_change }}</h3>
+          <div class="cv-stats-virus-item-label">Человек госпитализировано<br> за&nbsp;сутки</div>
+        </div>
+        <div class="card-block">
+          <h3 class="cv-stats-virus-item-value-good">{{ healed }}</h3>
+          <div class="cv-stats-virus-item-label">Выздоровело<br>&nbsp;всего</div>
+        </div>
+        <div class="card-block">
+            <h3 class="cv-stats-virus-item-value-good">{{ healed_change }}</h3>
+            <div class="cv-stats-virus-item-label">Выписано<br> за&nbsp;сутки</div>
+        </div>
+    </section>
+    <p class="stat_info">Информация взята с сайта <a href="https://стопкоронавирус.рф/information/" target="_blank" rel="noopener">СтопКороновирус.рф</a></p>
+  </main>
